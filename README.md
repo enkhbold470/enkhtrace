@@ -18,7 +18,25 @@ the Erdenet robot challenge.
 
 - `hardware/enkhtrace.kicad_pcb` — the board in KiCad 10 format.
 - `easyeda/enkhtrace_pcb.easyeda.json` — the original EasyEDA Standard document.
-- `images/enkhtrace-top.png` — a render of the top side.
+- `firmware/Src/` — the STM32 firmware (STM32CubeMX / HAL project sources).
+- `images/` — a render of the top side, plus photos of the first build, the
+  soldering and the bare PCB.
+
+## Build photos
+
+![First build](images/first-build.png)
+
+![Soldering](images/soldering.png)
+
+![The PCB](images/pcb.png) ![Render with PCB](images/render-with-pcb.png)
+
+## Firmware
+
+`firmware/Src/` holds the sources for the STM32F103RET6: `main.c` and the
+STM32CubeMX-generated `stm32f1xx_hal_msp.c`, `stm32f1xx_it.c` and
+`system_stm32f1xx.c`. It is the source folder only; the CubeMX project file,
+the HAL/CMSIS drivers and the headers are not included, so regenerate them with
+STM32CubeMX for an STM32F103RETx before building.
 
 ## Where it came from
 
@@ -32,4 +50,7 @@ published with the original project, so none is included.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE) — for the board, the images and the code written
+for this project. The STM32CubeMX-generated parts of the firmware are
+© STMicroelectronics under the BSD 3-Clause licence stated in each file's
+header, and those headers are kept as they were.
